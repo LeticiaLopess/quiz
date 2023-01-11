@@ -1,13 +1,13 @@
 import RespostaModel from "./resposta"
 
 export default class QuestaoModel {
-    #id?: number[]
-    #enunciado: string[] = []
+    #id?: number
+    #enunciado: string
     #respostas: RespostaModel[]
     #acertou: boolean
     // #respondida: boolean
 
-    constructor(id: number[], enunciado: string[], respostas: RespostaModel[], acertou = false) {
+    constructor(id: number, enunciado: string, respostas: RespostaModel[], acertou = false) {
         this.#id = id
         this.#enunciado = enunciado
         this.#respostas = respostas
@@ -37,6 +37,15 @@ export default class QuestaoModel {
         }
         
         return false
+    }
+
+    paraObjeto() {
+        return {
+            id: this.#id,
+            enunciado: this.#enunciado,
+            respostas: this.#respostas.map(resp => resp.paraObjeto()),
+            acertou: this.#acertou
+        }
     }
 
 }
