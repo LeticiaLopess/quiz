@@ -1,4 +1,5 @@
 import { isConstructorDeclaration } from "typescript"
+import QuestaoModel from "./questao"
 
 export default class RespostaModel {
     #valor: string
@@ -35,7 +36,7 @@ export default class RespostaModel {
     paraObjeto() {
         return {
             valor: this.#valor,
-            certa: this.#revelada,
+            certa: this.#certa,
             revelada: this.#revelada
         }
     }
