@@ -2,7 +2,7 @@ import RespostaModel from "./resposta"
 import { embaralhar } from "../functions/arrays"
 
 export default class QuestaoModel {
-    #id?: number
+    #id: number
     #enunciado: string
     #respostas: RespostaModel[]
     #acertou: boolean
