@@ -31,6 +31,10 @@ export default class QuestaoModel {
         return this.#acertou
     }
 
+    get naoRespondida() {
+        return !this.respondida
+    }
+
     get respondida() {
         // FIXME: implementar esse método
         for(let resposta of this.#respostas) {

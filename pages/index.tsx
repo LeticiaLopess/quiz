@@ -18,6 +18,12 @@ function respostaFornecida(indice: number) {
   setQuestao(questao.responderCom(indice))
 }
 
+function tempoEsgotado() {
+  if(questao.naoRespondida) {
+    setQuestao(questao.responderCom(-1))
+  }
+}
+
   return (
     <div style={{
       display: 'flex',
@@ -27,7 +33,9 @@ function respostaFornecida(indice: number) {
     }}>
       <>
       <Questao valor={questao}
-        respostaFornecida={respostaFornecida}/>
+        tempoPraResposta={5}
+        respostaFornecida={respostaFornecida}
+        tempoEsgotado={tempoEsgotado}/>
       </>
     </div>
     
