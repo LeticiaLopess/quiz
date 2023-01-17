@@ -1,6 +1,6 @@
 import questoes from "../bancoDeQuestoes"
 
-export default (req: any, res: any) => {
+export default function questoesProId (req: any, res: any) {
     const idSelecionado = Number(req.query.id)
 
     const unicaQuestaoOuNada = questoes.filter(questao => questao.id === idSelecionado)
